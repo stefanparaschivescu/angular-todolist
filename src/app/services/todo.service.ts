@@ -1,36 +1,40 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Todo } from '../models/Todo';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'content-type':'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
 
-  constructor() {
-    
-   }
+  httpUrl:string = 'https://jsonplaceholder.typicode.com/todos';
+  limit:string = '?_limit=7'
 
-   getTodos () {
-    return [
-      {
-        id:1,
-        title:'laundry',
-        completed: true
-      },
-      {
-        id:2,
-        title:'wash dishes',
-        completed: false
-      },
-      {
-        id:3,
-        title:'repair car',
-        completed: true
-      },
-      {
-        id:4,
-        title:'watch tv',
-        completed: false
-      },
-    ]
-   }
+  constructor(private http:HttpClient) { }
+
+  getTodos():Observable<Todo[]> { 
+    return this.http.get<Todo[]>(`${this.httpUrl}${this.limit}`)
+  }
+
+  toggleCompleted(todo: Todo):Observable<any> {
+    const url =  `${this.httpUrl}/${todo.id}`;  
+    return this.http.put(url, todo, httpOptions);
+  }
+
+  deleteTodo(todo: Todo):Observable<Todo> {
+    const url =  `${this.httpUrl}/${todo.id}`;
+    return this.http.delete<Todo>(url, httpOptions);  
+  }
+
+  addTodo(todo: Todo):Observable<Todo> {
+    const url =  `${this.httpUrl}/${todo.id}`;
+    return this.http.post<Todo>(this.httpUrl, todo, httpOptions);  
+  }
 }
