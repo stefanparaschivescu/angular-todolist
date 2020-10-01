@@ -1,6 +1,7 @@
 # Angular Todolist
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+Form submit doesn't generate todo.id.
+This app uses a test API and so in the real world, the database would auto-increment the value of the id.
 
 ## Development server
 
