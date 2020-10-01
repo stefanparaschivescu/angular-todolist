@@ -1,17 +1,17 @@
 .del {
-    background: #ff0000;
+    background: #f84b4b;
     color: #fff;
     border: none;
     padding: 5px 9px;
-    border-radius: 50%;
+    border-radius: 45%;
     cursor: pointer;
     float: right;
   }
   
   .todo {
-    background: #f4f4f4;
-    padding: 10px;
-    border-bottom: 1px #ccc dotted;
+    background: #ddddfc;
+    padding: 15px;
+    border-bottom: 1px rgb(186, 166, 230) solid;
   }
   
   .is-complete {
