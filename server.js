@@ -2,14 +2,15 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static('./dist/project-name'));
+app.use(express.static('./dist/angular-todolist'));
 
 app.get('/*', function (req, res) {
-  res.sendFile('index.html', { root: 'dist/project-name' }
+  res.sendFile('index.html', { root: 'dist/angular-todolist' }
   );
 });
 
-app.listen(process.env.PORT || 8080, () => {
-    console.log(`Server is running on port ${PORT}.`);
-}); 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 
