@@ -1,24 +1,13 @@
 # Angular Todolist
-
-Form submit doesn't generate todo.id.
-This app uses a test API and so in the real world, the database would auto-increment the value of the id.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+#
+**IMPORTANT!**
+*Form submit doesn't generate todo.id.*
+***This web app uses a test API (not a real one)*** and so in the real world, the database would auto-increment the value of the id.
+**Because it doesn't have a backend service to update the database, when the user deletes one of the todos it deletes every todos inserted.**
+In future will have a small backend implementation and database with users to resolve this bug.
+#
+## Features
+* Add Todo
+* Cut Todo
+* Delete Todo
+* Information About Page
